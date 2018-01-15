@@ -11,7 +11,7 @@ public class SignInPage extends PageObject{
 	@FindBy(name="pass")
 	WebElementFacade passwordFld;
 	
-	@FindBy(name="sgnBt")
+	@FindBy(css="#btnWrapper2 > input[name='sgnBt']")
 	WebElementFacade signInBtn;
 	
 	public SignInPage enterPassword(User user) {

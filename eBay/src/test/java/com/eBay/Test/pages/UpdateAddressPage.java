@@ -1,6 +1,9 @@
 package com.eBay.Test.pages;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.openqa.selenium.support.ui.Select;
 
 import com.eBay.DataClasses.User;
@@ -32,6 +35,9 @@ public class UpdateAddressPage extends PageObject{
 	@FindBy(css="input[value='Continue']")
 	WebElementFacade continueBtn;
 	
+	@FindBy(linkText="contact customer service")
+	WebElementFacade customerSrvcLink;
+	
 	private UpdateAddressPage enterText(WebElementFacade element, String value) {
 		element.type(value);
 		return this;
@@ -58,7 +64,16 @@ public class UpdateAddressPage extends PageObject{
 		return this;
 	}
 	
-	
+	public static Set<String> winHandles = new HashSet<>();
+	public static String currentWindow = new String();
+	public UpdateAddressPage clickCustomerService() {
+		customerSrvcLink.waitUntilClickable().click();
+		
+		currentWindow = getDriver().getWindowHandle();
+		winHandles = getDriver().getWindowHandles();
+		
+		return this;
+	}
 	
 	
 	

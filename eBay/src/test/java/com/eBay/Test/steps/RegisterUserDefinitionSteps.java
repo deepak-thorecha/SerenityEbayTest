@@ -44,9 +44,14 @@ public class RegisterUserDefinitionSteps {
 
 	@Then("^I validate the added address$")
 	public void i_validate_the_added_address() throws Exception {
-		addrSteps.go_to_Account_Settings();
-		addrSteps.click_change_link();
-		addrSteps.verify_saved_address(data.users.get(count));
+		try{
+			addrSteps.verify_customer_service_link();
+			addrSteps.validate_customer_service_page_opened();
+		}catch(Exception e) {
+			addrSteps.go_to_Account_Settings();
+			addrSteps.click_change_link();
+			addrSteps.verify_saved_address(data.users.get(count));
+		}
 	}
 	
 	
