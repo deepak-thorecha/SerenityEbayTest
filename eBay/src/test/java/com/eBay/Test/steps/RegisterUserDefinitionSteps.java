@@ -38,6 +38,7 @@ public class RegisterUserDefinitionSteps {
 		addrSteps.go_to_Account_Settings();
 		addrSteps.click_addresses_link();
 		addrSteps.click_create_link();
+		addrSteps.perform_intermediate_confirmation_login(data.users.get(count));
 		addrSteps.complete_address_details_form(data.users.get(count));
 	}
 

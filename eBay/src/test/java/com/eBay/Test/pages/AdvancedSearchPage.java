@@ -81,7 +81,7 @@ public class AdvancedSearchPage extends PageObject{
 	
 	public void submitSearch() {
 		try{
-			new Actions(getDriver()).moveToElement(submitSrch).perform();
+			new Actions(getDriver()).moveToElement(getDriver().findElement(By.cssSelector("#gf-l > .gf-li"))).perform();
 			submitSrch.waitUntilClickable().click();
 		}catch (Exception e) {
 			JSEUtils.clickElement(submitSrch);

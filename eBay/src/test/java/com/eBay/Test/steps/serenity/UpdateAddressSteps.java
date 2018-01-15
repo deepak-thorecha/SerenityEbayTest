@@ -39,7 +39,9 @@ public class UpdateAddressSteps {
 	
 	@Step
 	public void perform_intermediate_confirmation_login(User user) {
-		loginPage.enterPassword(user).clickSignInBtn();
+		try{
+			loginPage.enterPassword(user).clickSignInBtn();
+		}catch(Exception e) {}
 	}
 	
 	@Step

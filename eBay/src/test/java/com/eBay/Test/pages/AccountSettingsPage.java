@@ -23,7 +23,7 @@ public class AccountSettingsPage extends PageObject{
 	}
 	
 	public void clickCreateLink() {
-		createLink.get(1).click();
+		createLink.get(0).click();
 	}
 	
 	public void clickChangeLink() {
